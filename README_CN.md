@@ -4,6 +4,11 @@
 
 TSCache 是一个为 Go 应用程序设计的高性能、线程安全的内存缓存库。它提供了内存管理、多种淘汰策略、数据压缩和自动分片等高级功能。
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/tinystack/tscache)](https://goreportcard.com/report/github.com/tinystack/tscache)
+![Go Version](https://img.shields.io/badge/go%20version-%3E=1.22.0-61CFDD.svg?style=flat-square)
+[![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/tinystack/tscache)](https://pkg.go.dev/mod/github.com/tinystack/tscache)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## 特性
 
 - **内存管理**: 设置最大内存使用量，超出限制时自动触发淘汰机制

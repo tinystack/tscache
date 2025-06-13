@@ -4,6 +4,11 @@
 
 TSCache is a high-performance, thread-safe in-memory cache library for Go applications. It provides advanced features like memory management, multiple eviction policies, data compression, and automatic sharding.
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/tinystack/tscache)](https://goreportcard.com/report/github.com/tinystack/tscache)
+![Go Version](https://img.shields.io/badge/go%20version-%3E=1.22.0-61CFDD.svg?style=flat-square)
+[![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/tinystack/tscache)](https://pkg.go.dev/mod/github.com/tinystack/tscache)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Features
 
 - **Memory Management**: Set maximum memory usage with automatic eviction when limits are exceeded
