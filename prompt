@@ -1,0 +1,29 @@
+你是一名Golang开发工程师，帮我完成tscache包的开发工作，具体要求:
+1. tscache是Go语言实现的本地内存缓存库,主要特性为:
+    支持置最大内存占用，超出时触发淘汰机制
+    支持数据过期时间设置
+    支持LRU、LFU、FIFO缓存淘汰策略
+    支持并发安全
+    通过分片缓存减少锁竞争, 缓存分片数量支持动态扩缩容, 根据内存压力自动调整缓存大小
+    内存数据结构优化（如哈希表、跳表），保证 O (1) 或 O (log n) 的查询复杂度
+    支持对大尺寸数据压缩，减少内存占用
+
+2. 定义结构体 Cache , 结构体包含以下公开的方法:
+    - NewCache(maxSize int64, maxCount int64, evictionPolicy string) *Cache: 创建缓存实例, maxSize为最大内存占用, maxCount为最大缓存项数量, evictionPolicy为缓存淘汰策略, 返回Cache实例
+    - Set(key string, value any, ttl time.Duration) error: 设置缓存项, key为缓存项的key, value为缓存项的值, ttl为缓存项的过期时间, 返回错误信息
+    - Get(key string) (any, error): 获取缓存项, key为缓存项的key, 返回缓存项的值和错误信息
+    - Delete(key string) error: 删除缓存项, key为缓存项的key, 返回错误信息
+    - Clear() error: 清空缓存, 返回错误信息
+    - Stats() 返回结构体, 获取缓存统计信息, 返回结构体包含:
+        - Hits: 缓存命中次数
+        - Misses: 缓存未命中次数
+        - Evictions: 缓存淘汰次数, 包括数据过期淘汰和缓存项数量达到上限的淘汰
+        - CurrentSize: 当前缓存大小, 单位为字节
+        - CurrentCount: 当前缓存项数量
+        - EvictionPolicy: 缓存淘汰策略
+        - MaxSize: 最大内存占用, 单位为字节
+        - MaxCount: 最大缓存项数量, 单位为个
+3. 合理的生成多个go文件, 每个go文件的功能明确, 代码风格符合Go语言的规范，代码结构清晰, 代码注释完整, 代码可读性好, 代码可维护性好, 代码可测试性好
+4. 生成完整的代码, 并给出完整的测试用例, 并给出完整的示例代码
+5. 代码风格符合Go语言的规范, 代码结构清晰, 代码注释完整, 代码可读性好, 代码可维护性好, 代码可测试性好
+6. 生成README文件, 其中README.md文件为英文文档, 同时生成README_CN.md文件, 其中README_CN.md文件为中文文档, 多个README文档之间增加快捷链接, 方便用户快速切换语言
